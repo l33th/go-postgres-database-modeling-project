@@ -37,6 +37,6 @@ func CreateProductItemsTable(db *pg.DB) error {
 	if createErr != nil {
 		log.Printf("Error while creating table productItems, ERROR: %v\n", createErr)
 	}
-	log.Println("Table ProductItems created successfully.\n")
+	log.Println("Table ProductItems created successfully.")
 	return nil
 }
