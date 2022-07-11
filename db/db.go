@@ -22,10 +22,10 @@ func Connect() {
 	// Connection setup
 	db = pg.Connect(options)
 	if db == nil {
-		log.Printf("Failed to connect to db\n")
+		log.Printf("Failed to connect to db.\n")
 		os.Exit(100)
 	}
-	log.Println("Connection to db successful")
+	log.Println("Connection to db successful.")
 
 	err := CreateProductItemsTable(db)
 	if err != nil {
@@ -37,5 +37,5 @@ func Connect() {
 		log.Printf("Error occured when trying to close the connection: %v\n", err)
 		os.Exit(100)
 	}
-	log.Println("Connection closed successfully")
+	log.Println("Connection closed successfully.")
 }
