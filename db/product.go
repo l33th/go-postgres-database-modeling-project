@@ -1,10 +1,12 @@
 package db
 
 import (
+	// Third party packages
 	"github.com/go-pg/pg"
 	"github.com/go-pg/pg/orm"
-	"log"
 
+	// Default packages
+	"log"
 	"time"
 )
 
@@ -29,14 +31,16 @@ type ProductItem struct {
 	IsActive  bool      `sql:"is_active"`
 }
 
+// CreateProductItemsTable creates a new table
 func CreateProductItemsTable(db *pg.DB) error {
 	options := &orm.CreateTableOptions{
 		IfNotExists: true,
 	}
+	// Create table
 	createErr := db.CreateTable(&ProductItem{}, options)
 	if createErr != nil {
 		log.Printf("Error while creating table productItems, ERROR: %v\n", createErr)
 	}
-	log.Println("Table ProductItems created successfully.")
+	log.Println("Table ProductItems created successfully!")
 	return nil
 }
